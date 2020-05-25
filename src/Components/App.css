@@ -52,7 +52,7 @@
   justify-content: center;
 }
 .bingoGridListTileGained {
-  border: none;
+  border: solid 0.5px #e0c2ca;
 }
 
 .btn {
