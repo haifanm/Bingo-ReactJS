@@ -1,0 +1,231 @@
+.App {
+  background-color: #c38d9e;
+  display: flex;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  flex: 1;
+  flex-direction: row;
+  justify-content: "space-between";
+}
+
+.titleText {
+  margin-top: 10%;
+  margin-left: 8%;
+  color: #ffffff;
+}
+
+.leftAndRight {
+  flex: 1;
+}
+
+.center {
+  flex: 4;
+  background-color: #e0c2ca;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.gridRoot {
+  padding-top: 15%;
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow: hidden;
+  width: 40%;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.gridList {
+  flex: 2;
+}
+
+.gridListTile {
+  border: solid 2px rgb(255, 255, 255);
+  align-items: center;
+  justify-content: center;
+}
+.bingoGridListTileGained {
+  border: none;
+}
+
+.btn {
+  height: 100%;
+  width: 100%;
+  background-color: #41b3a3;
+  align-self: center;
+  padding-top: 18%;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 15px;
+
+  opacity: 1;
+  transition: opacity 300ms ease;
+}
+
+.touched {
+  opacity: 0.9;
+  background-color: #85dcba;
+}
+
+.bingoLetter {
+  height: 100%;
+  width: 100%;
+  /* background-color: rgb(255, 128, 128); */
+  align-self: center;
+  padding-top: 18%;
+  background: #ffbf94;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 15px;
+
+  opacity: 1;
+  transition: opacity 300ms ease;
+}
+
+.bingoLetterGained {
+  background: #ff7d59;
+}
+
+.computerTurn {
+  background: rgb(95, 95, 95);
+}
+
+.resetButton {
+  width: 15%;
+}
+
+.resetButtonIcon {
+  color: #ffffff;
+}
+
+.computerPlayingTextHide {
+  color: #e0c2ca;
+  font-weight: bold;
+  font-size: 120%;
+}
+
+.computerPlayingTextShow {
+  color: rgb(6, 6, 138);
+  font-weight: bold;
+  font-size: 120%;
+}
+
+/* .modalMain {
+  border: 2px solid red;
+  overflow: hidden; */
+/* } */
+.modal {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  /* border: 2px solid red; */
+}
+.modalResultDiv {
+  /* background-color: cyan; */
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resultsMessage {
+  font-weight: bold;
+  font-size: 300%;
+}
+.modalTablesDiv {
+  background-color: #7ec3b0;
+  flex: 7;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.modalTablePlayerId {
+  font-weight: bold;
+  font-size: 130%;
+  color: #ffffff;
+}
+.modalTableEach {
+  /* background-color: darkblue; */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.modalPlayAgainDiv {
+  /* background-color: darkgoldenrod; */
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/////////
+.inModalGridList {
+  flex: 2;
+}
+
+.inModalGridListTile {
+  border: solid 2px #7ec3b0;
+}
+.inModalBingoGridListTileGained {
+  border: none;
+}
+
+.inModalBtn {
+  height: 100%;
+  width: 100%;
+  background-color: #41b3a3;
+  align-self: center;
+  padding-top: 18%;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 15px;
+
+  opacity: 1;
+  transition: opacity 300ms ease;
+}
+
+.inModalTouched {
+  opacity: 0.9;
+  background-color: #85dcba;
+}
+
+.inModalBingoLetter {
+  height: 100%;
+  width: 100%;
+  /* background-color: rgb(255, 128, 128); */
+  align-self: center;
+  padding-top: 18%;
+  background: #ffbf94;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 15px;
+
+  opacity: 1;
+  transition: opacity 300ms ease;
+}
+
+.inModalBingoLetterGained {
+  background: #ff7d59;
+  border: solid 0.1px #7ec3b0;
+}
