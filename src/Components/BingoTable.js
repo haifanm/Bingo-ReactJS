@@ -185,8 +185,8 @@ class Bingo extends Component {
 
         {/*player bingo*/}
         <GridList
+          style={{ height: 100, padding: 0, margin: 0 }}
           cellHeight={100}
-          cellWidth={100}
           spacing={0}
           className="gridList"
           cols={5}
@@ -213,11 +213,11 @@ class Bingo extends Component {
           ))}
         </GridList>
         {/*player space*/}
-        <GridList cellHeight={100} spacing={0} cols={5} style={{ flex: "1" }}>
+        {/* <GridList cellHeight={100} spacing={0} cols={5} style={{ flex: "1" }}>
           {this.state.bingo.map((item) => (
             <GridListTile key={item.letter} rows={0.2}></GridListTile>
           ))}
-        </GridList>
+        </GridList> */}
 
         {/*player grid*/}
         <GridList cellHeight={100} spacing={0} className="gridList" cols={5}>
@@ -242,11 +242,11 @@ class Bingo extends Component {
         </GridList>
 
         {/*space between*/}
-        <GridList cellHeight={100} spacing={0} cols={5} style={{ flex: "1" }}>
+        {/* <GridList cellHeight={100} spacing={0} cols={5} style={{ flex: "1" }}>
           {this.state.bingo.map((item) => (
             <GridListTile key={item.letter} rows={0.2}></GridListTile>
           ))}
-        </GridList>
+        </GridList> */}
 
         <p
           className={

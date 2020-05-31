@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Bingo from "./Bingo";
+import BingoTable from "./BingoTable";
 import GitHubIcon from "@material-ui/icons/GitHub";
 // import { Helmet } from "react-helmet";
 
@@ -12,12 +12,12 @@ function App() {
       </Helmet> */}
       <div className="leftAndRight" />
       <div className="center">
-        <div className="leftAndRight">
-          <h1 className="titleText">Play 5x5 Bingo</h1>
-        </div>
-
-        <Bingo />
-        <div className="leftAndRight" />
+        {/* <div className="leftAndRight">
+          
+        </div> */}
+        <h1 className="titleText">Play 5x5 Bingo</h1>
+        <BingoTable />
+        {/* <div className="leftAndRight" /> */}
       </div>
       <div className="leftAndRight">
         <a

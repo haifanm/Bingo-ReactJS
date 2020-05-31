@@ -24,26 +24,25 @@
   background-color: #e0c2ca;
 
   display: flex;
-  flex-direction: row;
-}
-
-.gridRoot {
-  padding-top: 15%;
-  flex: 1;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  overflow: hidden;
-  width: 40%;
-  align-self: center;
-  justify-self: center;
-  text-align: center;
-  display: flex;
   flex-direction: column;
 }
 
+.gridRoot {
+  padding-top: 5%;
+  flex: 1;
+  display: flex;
+  /* flex-wrap: wrap; */
+  /* overflow: hidden; */
+  align-self: center;
+  /* justify-self: center; */
+  text-align: center;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+
 .gridList {
-  flex: 2;
+  overflow-y: initial;
+  width: 300px;
 }
 
 .gridListTile {
@@ -110,7 +109,7 @@
 }
 
 .computerPlayingTextHide {
-  color: #e0c2ca;
+  color: #e0c2ca00;
   font-weight: bold;
   font-size: 120%;
 }
