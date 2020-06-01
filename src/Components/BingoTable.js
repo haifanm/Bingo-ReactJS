@@ -314,17 +314,21 @@ class Bingo extends Component {
         >
           <div className="modal">
             <div className="modalResultDiv">
-              <div className="resultsMessage">
+              <div
+                className="resultsMessage"
+                style={
+                  this.state.winner
+                    ? { color: "#ff0000" }
+                    : { color: "rgb(6, 6, 138)" }
+                }
+              >
                 {this.state.winner ? "You Lost :( Try Again" : "You Won!!"}
               </div>
             </div>
 
             <div className="modalTablesDiv">
-              <div style={{ flex: 1 }}></div>
               {FinalTable(0, this.state.bingo, this.state.items)}
-              <div style={{ flex: 1 }}></div>
               {FinalTable(1, this.state.computerBingo, this.state.computerGrid)}
-              <div style={{ flex: 1 }}></div>
             </div>
 
             <div className="modalPlayAgainDiv">
