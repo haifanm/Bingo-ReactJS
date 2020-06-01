@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Bingo-ReactJS/precache-manifest.87b7ba16beab198ce66a423f47a8dc66.js"
+  "/Bingo-ReactJS/precache-manifest.078bc41f6fa38d1574e556c406a37fad.js"
 );
 
 self.addEventListener('message', (event) => {

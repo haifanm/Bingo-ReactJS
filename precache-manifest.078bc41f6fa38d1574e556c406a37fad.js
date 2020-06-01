@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "60d65e1688e16801f30f9d246d214e35",
+    "revision": "cf518a20869faa58cc9bc4cdce97986c",
     "url": "/Bingo-ReactJS/index.html"
   },
   {
-    "revision": "04922b346b4417938952",
-    "url": "/Bingo-ReactJS/static/css/main.12e7544d.chunk.css"
+    "revision": "5b6fb28a84476a7c18fa",
+    "url": "/Bingo-ReactJS/static/css/main.ada0fb4c.chunk.css"
   },
   {
     "revision": "10fd27bc4a2a7dcfd0a3",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Bingo-ReactJS/static/js/2.1b470128.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "04922b346b4417938952",
-    "url": "/Bingo-ReactJS/static/js/main.fe907c30.chunk.js"
+    "revision": "5b6fb28a84476a7c18fa",
+    "url": "/Bingo-ReactJS/static/js/main.6413e271.chunk.js"
   },
   {
     "revision": "eee10a5567583122015c",
