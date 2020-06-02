@@ -10,30 +10,30 @@ function chooseComputerIndex(computerGrid) {
   //chooses the number in the grid (not the index) to be played by the computer and returns it
 
   let specificNumber = ComputerChoice(computerGrid);
-  console.log(specificNumber);
+  // console.log(specificNumber);
   if (specificNumber > 0) {
     return specificNumber;
   }
   var min = 0;
   var max = 24;
   var randomIndex = Math.floor(Math.random() * (max - min + 1)) + min;
-  console.log(
-    "randomIndex" +
-      randomIndex +
-      " randomNumber " +
-      computerGrid[randomIndex].number +
-      " picked " +
-      computerGrid[randomIndex].picked
-  );
+  // console.log(
+  //   "randomIndex" +
+  //     randomIndex +
+  //     " randomNumber " +
+  //     computerGrid[randomIndex].number +
+  //     " picked " +
+  //     computerGrid[randomIndex].picked
+  // );
   while (computerGrid[randomIndex].picked) {
-    console.log(
-      "randomIndex" +
-        randomIndex +
-        " randomNumber " +
-        computerGrid[randomIndex].number +
-        " picked " +
-        computerGrid[randomIndex].picked
-    );
+    // console.log(
+    //   "randomIndex" +
+    //     randomIndex +
+    //     " randomNumber " +
+    //     computerGrid[randomIndex].number +
+    //     " picked " +
+    //     computerGrid[randomIndex].picked
+    // );
     randomIndex = Math.floor(Math.random() * (max - min + 1)) + min;
   }
 

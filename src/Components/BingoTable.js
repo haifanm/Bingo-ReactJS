@@ -30,7 +30,10 @@ class Bingo extends Component {
       ],
       computerGrid: GenerateGrid(),
       gameEnded: false,
-      winner: 2, //winner 0: player    1: computer
+      winner: 2, //winner 0: player    1: computer    2:Tie
+      winnerMessage: "",
+      winnerMessageColor: "",
+      playerScore: 0,
     };
   }
 
@@ -77,6 +80,7 @@ class Bingo extends Component {
       this.setState({
         gameEnded: true,
         winner: 0,
+        playerScore: this.state.playerScore + 1,
       });
     }
   };
@@ -123,9 +127,24 @@ class Bingo extends Component {
       computerBingo: newComputerBingoList,
     });
     if (currentBingoScore >= 5) {
+      if (this.state.winner === 0) {
+        this.setState({
+          winner: 2,
+          winnerMessage: "It's A Tie",
+          winnerMessageColor: "#ffff00",
+        });
+      } else {
+        this.setState({
+          winner: 1,
+          winnerMessage: "You Lost :( Try Again",
+          winnerMessageColor: "#ff0000",
+        });
+      }
+    } else {
       this.setState({
-        gameEnded: true,
-        winner: 1,
+        winner: 0,
+        winnerMessage: "You Won!!",
+        winnerMessageColor: "rgb(6, 6, 138)",
       });
     }
   };
@@ -163,7 +182,10 @@ class Bingo extends Component {
         { letter: "G", gained: false },
         { letter: "O", gained: false },
       ],
+      winner: 2,
       gameEnded: false,
+      winnerMessage: "",
+      winnerMessageColor: "",
     });
     console.log("RESTARTING");
   };
@@ -171,6 +193,7 @@ class Bingo extends Component {
   render() {
     return (
       <div className="gridRoot">
+        <p className="score"> Your Score: {this.state.playerScore}</p>
         <Button
           className="resetButton"
           variant="contained"
@@ -316,14 +339,17 @@ class Bingo extends Component {
             <div className="modalResultDiv">
               <div
                 className="resultsMessage"
-                style={
-                  this.state.winner
-                    ? { color: "#ff0000" }
-                    : { color: "rgb(6, 6, 138)" }
-                }
+                style={{ color: this.state.winnerMessageColor }}
               >
-                {this.state.winner ? "You Lost :( Try Again" : "You Won!!"}
+                {this.state.winnerMessage}
               </div>
+              <p
+                className="score"
+                style={{ marginBottom: 0, paddingBottom: 0 }}
+              >
+                {" "}
+                Your Score: {this.state.playerScore}
+              </p>
             </div>
 
             <div className="modalTablesDiv">
