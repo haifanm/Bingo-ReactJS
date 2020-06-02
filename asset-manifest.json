@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/Bingo-ReactJS/static/css/main.ada0fb4c.chunk.css",
-    "main.js": "/Bingo-ReactJS/static/js/main.6413e271.chunk.js",
-    "main.js.map": "/Bingo-ReactJS/static/js/main.6413e271.chunk.js.map",
+    "main.css": "/Bingo-ReactJS/static/css/main.80fd488e.chunk.css",
+    "main.js": "/Bingo-ReactJS/static/js/main.5a170eb0.chunk.js",
+    "main.js.map": "/Bingo-ReactJS/static/js/main.5a170eb0.chunk.js.map",
     "runtime-main.js": "/Bingo-ReactJS/static/js/runtime-main.fac9da84.js",
     "runtime-main.js.map": "/Bingo-ReactJS/static/js/runtime-main.fac9da84.js.map",
     "static/js/2.1b470128.chunk.js": "/Bingo-ReactJS/static/js/2.1b470128.chunk.js",
     "static/js/2.1b470128.chunk.js.map": "/Bingo-ReactJS/static/js/2.1b470128.chunk.js.map",
     "index.html": "/Bingo-ReactJS/index.html",
-    "precache-manifest.078bc41f6fa38d1574e556c406a37fad.js": "/Bingo-ReactJS/precache-manifest.078bc41f6fa38d1574e556c406a37fad.js",
+    "precache-manifest.d4360d5599ad384ad509049ef6876aaf.js": "/Bingo-ReactJS/precache-manifest.d4360d5599ad384ad509049ef6876aaf.js",
     "service-worker.js": "/Bingo-ReactJS/service-worker.js",
-    "static/css/main.ada0fb4c.chunk.css.map": "/Bingo-ReactJS/static/css/main.ada0fb4c.chunk.css.map",
+    "static/css/main.80fd488e.chunk.css.map": "/Bingo-ReactJS/static/css/main.80fd488e.chunk.css.map",
     "static/js/2.1b470128.chunk.js.LICENSE.txt": "/Bingo-ReactJS/static/js/2.1b470128.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.fac9da84.js",
     "static/js/2.1b470128.chunk.js",
-    "static/css/main.ada0fb4c.chunk.css",
-    "static/js/main.6413e271.chunk.js"
+    "static/css/main.80fd488e.chunk.css",
+    "static/js/main.5a170eb0.chunk.js"
   ]
 }
