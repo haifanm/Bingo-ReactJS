@@ -1,13 +1,15 @@
-.App {
+body {
   background-color: #c38d9e;
+}
+.App {
   display: flex;
   position: absolute;
   height: 100%;
   width: 100%;
-  flex: 1;
   flex-direction: row;
-  justify-content: "space-between";
+  justify-content: center;
   min-height: 650px;
+  min-width: 320px;
 }
 
 .titleText {
@@ -16,14 +18,14 @@
   color: #ffffff;
 }
 
-.leftAndRight {
+/* .leftAndRight {
   flex: 1;
-}
+} */
 
 .center {
-  flex: 4;
+  /* flex: 4; */
   background-color: #e0c2ca;
-
+  width: 65%;
   display: flex;
   flex-direction: column;
 }
@@ -47,18 +49,21 @@
 }
 
 .gridListTile {
-  border: solid 2px rgb(255, 255, 255);
+  border: solid 1px rgb(255, 255, 255);
+  border-radius: 20%;
   align-items: center;
   justify-content: center;
 }
 .bingoGridListTileGained {
   border: solid 0.5px #e0c2ca;
+  border-radius: 20%;
 }
 
 .btn {
   height: 100%;
   width: 100%;
   background-color: #41b3a3;
+  border-radius: 20%;
   align-self: center;
   padding-top: 18%;
   padding: 10px 15px;
@@ -74,9 +79,11 @@
 .touched {
   opacity: 0.9;
   background-color: #85dcba;
+  border-radius: 20%;
 }
 
 .bingoLetter {
+  border-radius: 20%;
   height: 100%;
   width: 100%;
   /* background-color: rgb(255, 128, 128); */
@@ -94,6 +101,7 @@
 }
 
 .bingoLetterGained {
+  border-radius: 20%;
   background: #ff7d59;
 }
 
@@ -242,3 +250,14 @@
   color: rgb(6, 6, 138);
   font-size: 120%;
 }
+
+@media (max-width: 600px) {
+  .center {
+    width: 100%;
+  }
+}
+/* @media (max-width: 746px) {
+  .modalTablesDiv {
+    flex-direction: column;
+  }
+} */

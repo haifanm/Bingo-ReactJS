@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import { GridList, GridListTile } from "@material-ui/core";
-import ReactModal from "react-modal";
-import BingoChecker from "./BingoChecker";
-import chooseComputerIndex from "./ComputerPlayer";
-import GenerateGrid from "./GenerateGrid";
-import FinalTable from "./FinalTable";
-import CachedIcon from "@material-ui/icons/Cached";
-import Button from "@material-ui/core/Button";
+import React, { Component } from 'react';
+import { GridList, GridListTile } from '@material-ui/core';
+import ReactModal from 'react-modal';
+import BingoChecker from './BingoChecker';
+import chooseComputerIndex from './ComputerPlayer';
+import GenerateGrid from './GenerateGrid';
+import FinalTable from './FinalTable';
+import CachedIcon from '@material-ui/icons/Cached';
+import Button from '@material-ui/core/Button';
 
 class BingoTable extends Component {
   constructor() {
@@ -14,25 +14,25 @@ class BingoTable extends Component {
     this.state = {
       computerTurn: false,
       bingo: [
-        { letter: "B", gained: false },
-        { letter: "I", gained: false },
-        { letter: "N", gained: false },
-        { letter: "G", gained: false },
-        { letter: "O", gained: false },
+        { letter: 'B', gained: false },
+        { letter: 'I', gained: false },
+        { letter: 'N', gained: false },
+        { letter: 'G', gained: false },
+        { letter: 'O', gained: false },
       ],
       items: GenerateGrid(),
       computerBingo: [
-        { letter: "B", gained: false },
-        { letter: "I", gained: false },
-        { letter: "N", gained: false },
-        { letter: "G", gained: false },
-        { letter: "O", gained: false },
+        { letter: 'B', gained: false },
+        { letter: 'I', gained: false },
+        { letter: 'N', gained: false },
+        { letter: 'G', gained: false },
+        { letter: 'O', gained: false },
       ],
       computerGrid: GenerateGrid(),
-      gameEnded: false,
+      gameEnded: true,
       winner: 2, //winner 0: player    1: computer    2:Tie
-      winnerMessage: "",
-      winnerMessageColor: "",
+      winnerMessage: '',
+      winnerMessageColor: '',
       playerScore: 0,
     };
   }
@@ -131,20 +131,20 @@ class BingoTable extends Component {
         this.setState({
           winner: 2,
           winnerMessage: "It's A Tie",
-          winnerMessageColor: "#ffff00",
+          winnerMessageColor: '#ffff00',
         });
       } else {
         this.setState({
           winner: 1,
-          winnerMessage: "You Lost :( Try Again",
-          winnerMessageColor: "#ff0000",
+          winnerMessage: 'You Lost :( Try Again',
+          winnerMessageColor: '#ff0000',
         });
       }
     } else {
       this.setState({
         winner: 0,
-        winnerMessage: "You Won!!",
-        winnerMessageColor: "rgb(6, 6, 138)",
+        winnerMessage: 'You Won!!',
+        winnerMessageColor: 'rgb(6, 6, 138)',
       });
     }
   };
@@ -168,58 +168,58 @@ class BingoTable extends Component {
     this.setState({
       items: GenerateGrid(),
       bingo: [
-        { letter: "B", gained: false },
-        { letter: "I", gained: false },
-        { letter: "N", gained: false },
-        { letter: "G", gained: false },
-        { letter: "O", gained: false },
+        { letter: 'B', gained: false },
+        { letter: 'I', gained: false },
+        { letter: 'N', gained: false },
+        { letter: 'G', gained: false },
+        { letter: 'O', gained: false },
       ],
       computerGrid: GenerateGrid(),
       computerBingo: [
-        { letter: "B", gained: false },
-        { letter: "I", gained: false },
-        { letter: "N", gained: false },
-        { letter: "G", gained: false },
-        { letter: "O", gained: false },
+        { letter: 'B', gained: false },
+        { letter: 'I', gained: false },
+        { letter: 'N', gained: false },
+        { letter: 'G', gained: false },
+        { letter: 'O', gained: false },
       ],
       winner: 2,
       gameEnded: false,
-      winnerMessage: "",
-      winnerMessageColor: "",
+      winnerMessage: '',
+      winnerMessageColor: '',
     });
-    console.log("RESTARTING");
+    console.log('RESTARTING');
   };
 
   render() {
     return (
-      <div className="gridRoot">
-        <p className="score"> Your Score: {this.state.playerScore}</p>
+      <div className='gridRoot'>
+        <p className='score'> Your Score: {this.state.playerScore}</p>
         <Button
-          className="resetButton"
-          variant="contained"
-          color="secondary"
+          className='resetButton'
+          variant='contained'
+          color='secondary'
           onClick={() => {
-            if (window.confirm("Are you sure you wish to restart the game?"))
+            if (window.confirm('Are you sure you wish to restart the game?'))
               this.gameRestart();
           }}
         >
-          <CachedIcon className="resetButtonIcon" fontSize="large" />
+          <CachedIcon className='resetButtonIcon' fontSize='large' />
         </Button>
 
         {/*player bingo*/}
         <GridList
-          style={{ height: 100, padding: 0, margin: 0 }}
+          style={{ height: 90, padding: 0, margin: 0 }}
           cellHeight={100}
           spacing={0}
-          className="gridList"
+          className='gridList'
           cols={5}
         >
           {this.state.bingo.map((item) => (
             <GridListTile
               className={
                 item.gained
-                  ? "gridListTile bingoGridListTileGained"
-                  : "gridListTile"
+                  ? 'gridListTile bingoGridListTileGained'
+                  : 'gridListTile'
               }
               key={item.letter}
               cols={1}
@@ -227,7 +227,7 @@ class BingoTable extends Component {
             >
               <button
                 className={
-                  item.gained ? "bingoLetter bingoLetterGained" : "bingoLetter"
+                  item.gained ? 'bingoLetter bingoLetterGained' : 'bingoLetter'
                 }
               >
                 {item.letter}
@@ -243,16 +243,16 @@ class BingoTable extends Component {
         </GridList> */}
 
         {/*player grid*/}
-        <GridList cellHeight={100} spacing={0} className="gridList" cols={5}>
+        <GridList cellHeight={100} spacing={0} className='gridList' cols={5}>
           {this.state.items.map((item) => (
             <GridListTile
-              className="gridListTile"
+              className='gridListTile'
               key={item.number}
               cols={1}
-              rows={0.5}
+              rows={0.56}
             >
               <button
-                className={item.picked ? "btn touched" : "btn"}
+                className={item.picked ? 'btn touched' : 'btn'}
                 disabled={item.picked || this.state.computerTurn}
                 onMouseDown={this.toggleTouched}
                 onMouseUp={this.handleMouseUp}
@@ -274,8 +274,8 @@ class BingoTable extends Component {
         <p
           className={
             this.state.computerTurn
-              ? "computerPlayingTextShow"
-              : "computerPlayingTextHide"
+              ? 'computerPlayingTextShow'
+              : 'computerPlayingTextHide'
           }
         >
           Computer is playing..
@@ -330,38 +330,38 @@ class BingoTable extends Component {
 
         <ReactModal
           style={{
-            border: "1px solid #ccc",
+            border: '1px solid #ccc',
           }}
           isOpen={this.state.gameEnded}
-          contentLabel="Minimal Modal Example"
+          contentLabel='Minimal Modal Example'
         >
-          <div className="modal">
-            <div className="modalResultDiv">
+          <div className='modal'>
+            <div className='modalResultDiv'>
               <div
-                className="resultsMessage"
+                className='resultsMessage'
                 style={{ color: this.state.winnerMessageColor }}
               >
                 {this.state.winnerMessage}
               </div>
               <p
-                className="score"
+                className='score'
                 style={{ marginBottom: 0, paddingBottom: 0 }}
               >
-                {" "}
+                {' '}
                 Your Score: {this.state.playerScore}
               </p>
             </div>
 
-            <div className="modalTablesDiv">
+            <div className='modalTablesDiv'>
               {FinalTable(0, this.state.bingo, this.state.items)}
               {FinalTable(1, this.state.computerBingo, this.state.computerGrid)}
             </div>
 
-            <div className="modalPlayAgainDiv">
+            <div className='modalPlayAgainDiv'>
               <Button
                 onClick={this.gameRestart}
-                variant="contained"
-                color="primary"
+                variant='contained'
+                color='primary'
               >
                 NEW GAME
               </Button>
