@@ -5,7 +5,6 @@ Play 5x5 Bingo game against computer.
 ### Upcoming Features
 
 - Play online against strangers.
-- Track your score.
 
 ### Dependencies
 
