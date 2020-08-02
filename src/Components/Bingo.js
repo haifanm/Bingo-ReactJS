@@ -1,40 +1,43 @@
 import React, { Component } from 'react';
-import { GridList, GridListTile } from '@material-ui/core';
-import ReactModal from 'react-modal';
+// import { GridList, GridListTile } from '@material-ui/core';
+// import ReactModal from 'react-modal';
+import BingoTable from './BingoTable';
+import ResultsModal from './ResultsModal';
 import BingoChecker from './BingoChecker';
 import chooseComputerIndex from './ComputerPlayer';
 import GenerateGrid from './GenerateGrid';
-import FinalTable from './FinalTable';
+// import FinalTable from './FinalTable';
 import CachedIcon from '@material-ui/icons/Cached';
 import Button from '@material-ui/core/Button';
 
-class BingoTable extends Component {
+const initialState = JSON.stringify({
+  computerTurn: false,
+  bingo: [
+    { letter: 'B', gained: false },
+    { letter: 'I', gained: false },
+    { letter: 'N', gained: false },
+    { letter: 'G', gained: false },
+    { letter: 'O', gained: false },
+  ],
+  items: GenerateGrid(),
+  computerBingo: [
+    { letter: 'B', gained: false },
+    { letter: 'I', gained: false },
+    { letter: 'N', gained: false },
+    { letter: 'G', gained: false },
+    { letter: 'O', gained: false },
+  ],
+  computerGrid: GenerateGrid(),
+  gameEnded: false,
+  winner: 2, //winner 0: player    1: computer    2:Tie
+  winnerMessage: '',
+  winnerMessageColor: '',
+});
+
+class Bingo extends Component {
   constructor() {
     super();
-    this.state = {
-      computerTurn: false,
-      bingo: [
-        { letter: 'B', gained: false },
-        { letter: 'I', gained: false },
-        { letter: 'N', gained: false },
-        { letter: 'G', gained: false },
-        { letter: 'O', gained: false },
-      ],
-      items: GenerateGrid(),
-      computerBingo: [
-        { letter: 'B', gained: false },
-        { letter: 'I', gained: false },
-        { letter: 'N', gained: false },
-        { letter: 'G', gained: false },
-        { letter: 'O', gained: false },
-      ],
-      computerGrid: GenerateGrid(),
-      gameEnded: true,
-      winner: 2, //winner 0: player    1: computer    2:Tie
-      winnerMessage: '',
-      winnerMessageColor: '',
-      playerScore: 0,
-    };
+    this.state = { ...JSON.parse(initialState), playerScore: 0 };
   }
 
   pick = async (pickedNumber) => {
@@ -62,6 +65,7 @@ class BingoTable extends Component {
 
     await this.computerTurn();
   };
+
   checkForBingoUpdate = async () => {
     const currentBingoScore = BingoChecker(this.state.items);
 
@@ -166,34 +170,16 @@ class BingoTable extends Component {
 
   gameRestart = () => {
     this.setState({
-      items: GenerateGrid(),
-      bingo: [
-        { letter: 'B', gained: false },
-        { letter: 'I', gained: false },
-        { letter: 'N', gained: false },
-        { letter: 'G', gained: false },
-        { letter: 'O', gained: false },
-      ],
-      computerGrid: GenerateGrid(),
-      computerBingo: [
-        { letter: 'B', gained: false },
-        { letter: 'I', gained: false },
-        { letter: 'N', gained: false },
-        { letter: 'G', gained: false },
-        { letter: 'O', gained: false },
-      ],
-      winner: 2,
-      gameEnded: false,
-      winnerMessage: '',
-      winnerMessageColor: '',
+      ...JSON.parse(initialState),
+      playerScore: this.state.playerScore,
     });
-    console.log('RESTARTING');
   };
 
   render() {
     return (
       <div className='gridRoot'>
         <p className='score'> Your Score: {this.state.playerScore}</p>
+
         <Button
           className='resetButton'
           variant='contained'
@@ -206,64 +192,13 @@ class BingoTable extends Component {
           <CachedIcon className='resetButtonIcon' fontSize='large' />
         </Button>
 
-        {/*player bingo*/}
-        <GridList
-          style={{ height: 90, padding: 0, margin: 0 }}
-          cellHeight={100}
-          spacing={0}
-          className='gridList'
-          cols={5}
-        >
-          {this.state.bingo.map((item) => (
-            <GridListTile
-              className={
-                item.gained
-                  ? 'gridListTile bingoGridListTileGained'
-                  : 'gridListTile'
-              }
-              key={item.letter}
-              cols={1}
-              rows={0.5}
-            >
-              <button
-                className={
-                  item.gained ? 'bingoLetter bingoLetterGained' : 'bingoLetter'
-                }
-              >
-                {item.letter}
-              </button>
-            </GridListTile>
-          ))}
-        </GridList>
-        {/*player space*/}
-        {/* <GridList cellHeight={100} spacing={0} cols={5} style={{ flex: "1" }}>
-          {this.state.bingo.map((item) => (
-            <GridListTile key={item.letter} rows={0.2}></GridListTile>
-          ))}
-        </GridList> */}
-
-        {/*player grid*/}
-        <GridList cellHeight={100} spacing={0} className='gridList' cols={5}>
-          {this.state.items.map((item) => (
-            <GridListTile
-              className='gridListTile'
-              key={item.number}
-              cols={1}
-              rows={0.56}
-            >
-              <button
-                className={item.picked ? 'btn touched' : 'btn'}
-                disabled={item.picked || this.state.computerTurn}
-                onMouseDown={this.toggleTouched}
-                onMouseUp={this.handleMouseUp}
-                onClick={() => this.pick(item.number)}
-              >
-                {item.number}
-              </button>
-            </GridListTile>
-          ))}
-        </GridList>
-
+        <BingoTable
+          bingo={this.state.bingo}
+          items={this.state.items}
+          computerTurn={this.state.computerTurn}
+          pick={this.pick}
+          gameEnded={false}
+        />
         {/*space between*/}
         {/* <GridList cellHeight={100} spacing={0} cols={5} style={{ flex: "1" }}>
           {this.state.bingo.map((item) => (
@@ -328,48 +263,19 @@ class BingoTable extends Component {
           ))}
         </GridList> */}
 
-        <ReactModal
-          style={{
-            border: '1px solid #ccc',
-          }}
-          isOpen={this.state.gameEnded}
-          contentLabel='Minimal Modal Example'
-        >
-          <div className='modal'>
-            <div className='modalResultDiv'>
-              <div
-                className='resultsMessage'
-                style={{ color: this.state.winnerMessageColor }}
-              >
-                {this.state.winnerMessage}
-              </div>
-              <p
-                className='score'
-                style={{ marginBottom: 0, paddingBottom: 0 }}
-              >
-                {' '}
-                Your Score: {this.state.playerScore}
-              </p>
-            </div>
-
-            <div className='modalTablesDiv'>
-              {FinalTable(0, this.state.bingo, this.state.items)}
-              {FinalTable(1, this.state.computerBingo, this.state.computerGrid)}
-            </div>
-
-            <div className='modalPlayAgainDiv'>
-              <Button
-                onClick={this.gameRestart}
-                variant='contained'
-                color='primary'
-              >
-                NEW GAME
-              </Button>
-            </div>
-          </div>
-        </ReactModal>
+        <ResultsModal
+          gameEnded={this.state.gameEnded}
+          winnerMessageColor={this.state.winnerMessageColor}
+          winnerMessage={this.state.winnerMessage}
+          playerScore={this.state.playerScore}
+          bingo={this.state.bingo}
+          items={this.state.items}
+          computerBingo={this.state.computerBingo}
+          computerGrid={this.state.computerGrid}
+          gameRestart={this.gameRestart}
+        />
       </div>
     );
   }
 }
-export default BingoTable;
+export default Bingo;

@@ -1,6 +1,7 @@
 body {
   background-color: #c38d9e;
 }
+
 .App {
   display: flex;
   position: absolute;
@@ -18,17 +19,45 @@ body {
   color: #ffffff;
 }
 
-/* .leftAndRight {
-  flex: 1;
-} */
-
 .center {
-  /* flex: 4; */
   background-color: #e0c2ca;
   width: 65%;
   display: flex;
   flex-direction: column;
 }
+
+.score {
+  font-weight: bold;
+  color: rgb(6, 6, 138);
+  font-size: 120%;
+}
+
+.computerTurn {
+  background: rgb(95, 95, 95);
+}
+
+.resetButton {
+  width: 15%;
+}
+
+.resetButtonIcon {
+  color: #ffffff;
+}
+
+.computerPlayingTextHide {
+  color: #e0c2ca00;
+  font-weight: bold;
+  font-size: 120%;
+}
+
+.computerPlayingTextShow {
+  color: rgb(6, 6, 138);
+  font-weight: bold;
+  font-size: 120%;
+}
+
+/* ////////////// */
+/*   MAIN TABLE   */
 
 .gridRoot {
   padding-top: 4%;
@@ -54,6 +83,7 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .bingoGridListTileGained {
   border: solid 0.5px #e0c2ca;
   border-radius: 20%;
@@ -105,34 +135,9 @@ body {
   background: #ff7d59;
 }
 
-.computerTurn {
-  background: rgb(95, 95, 95);
-}
+/* ////////// */
+/*   MODAL   */
 
-.resetButton {
-  width: 15%;
-}
-
-.resetButtonIcon {
-  color: #ffffff;
-}
-
-.computerPlayingTextHide {
-  color: #e0c2ca00;
-  font-weight: bold;
-  font-size: 120%;
-}
-
-.computerPlayingTextShow {
-  color: rgb(6, 6, 138);
-  font-weight: bold;
-  font-size: 120%;
-}
-
-/* .modalMain {
-  border: 2px solid red;
-  overflow: hidden; */
-/* } */
 .modal {
   flex: 1;
   display: flex;
@@ -143,6 +148,7 @@ body {
   min-height: 580px;
   /* border: 2px solid red; */
 }
+
 .modalResultDiv {
   /* background-color: cyan; */
   flex: 2;
@@ -168,11 +174,13 @@ body {
   justify-content: space-between;
   min-height: 420px;
 }
+
 .modalTablePlayerId {
   font-weight: bold;
   font-size: 130%;
   color: #ffffff;
 }
+
 .modalTableEach {
   /* background-color: darkblue; */
   flex: 1;
@@ -190,19 +198,19 @@ body {
   justify-content: center;
 }
 
-.inModalGridList {
+.in-modal-gridList {
   flex: 2;
   width: 270px;
 }
 
-.inModalGridListTile {
+.in-modal-gridListTile {
   border: solid 2px #7ec3b0;
 }
-.inModalBingoGridListTileGained {
+.in-modal-bingoGridListTileGained {
   border: none;
 }
 
-.inModalBtn {
+.in-modal-btn {
   height: 100%;
   width: 100%;
   background-color: #41b3a3;
@@ -213,17 +221,18 @@ body {
   outline: none;
   cursor: pointer;
   font-size: 15px;
-
   opacity: 1;
   transition: opacity 300ms ease;
+  border-radius: 20%;
 }
 
-.inModalTouched {
+.in-modal-touched {
   opacity: 0.9;
   background-color: #85dcba;
+  border-radius: 20%;
 }
 
-.inModalBingoLetter {
+.in-modal-bingoLetter {
   height: 100%;
   width: 100%;
   /* background-color: rgb(255, 128, 128); */
@@ -235,20 +244,15 @@ body {
   outline: none;
   cursor: pointer;
   font-size: 15px;
-
   opacity: 1;
   transition: opacity 300ms ease;
+  border-radius: 20%;
 }
 
-.inModalBingoLetterGained {
+.in-modal-bingoLetterGained {
   background: #ff7d59;
   border: solid 0.1px #7ec3b0;
-}
-
-.score {
-  font-weight: bold;
-  color: rgb(6, 6, 138);
-  font-size: 120%;
+  border-radius: 20%;
 }
 
 @media (max-width: 600px) {
@@ -256,8 +260,3 @@ body {
     width: 100%;
   }
 }
-/* @media (max-width: 746px) {
-  .modalTablesDiv {
-    flex-direction: column;
-  }
-} */

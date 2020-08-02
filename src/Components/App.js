@@ -1,25 +1,21 @@
 import React from 'react';
 import './App.css';
-import BingoTable from './BingoTable';
+import Bingo from './Bingo';
 import GitHubIcon from '@material-ui/icons/GitHub';
 // import { Helmet } from "react-helmet";
 
 function App() {
   return (
     <div className='App'>
-      {/* <Helmet>
-        <title>Bingo</title>
-      </Helmet> */}
-      {/* <div className='leftAndRight' /> */}
+      {/* <Helmet> <title>Bingo</title> </Helmet> */}
+
+      {/* BINGO GAME */}
       <div className='center'>
-        {/* <div className="leftAndRight">
-          
-        </div> */}
         <h1 className='titleText'>Play 5x5 Bingo</h1>
-        <BingoTable />
-        {/* <div className="leftAndRight" /> */}
+        <Bingo />
       </div>
-      {/* <div className='leftAndRight'> */}
+
+      {/* GITHUB ICON */}
       <a
         style={{
           color: '#000000',
@@ -33,7 +29,6 @@ function App() {
       >
         <GitHubIcon fontSize='large' />
       </a>
-      {/* </div> */}
     </div>
   );
 }
